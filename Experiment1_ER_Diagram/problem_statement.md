@@ -46,27 +46,29 @@ Design a database for patient management, appointments, medical records, and bil
    - How you modeled prerequisites or billing.
 
 # ER Diagram Submission - Student Name
-
+```
+Name: Ashwin Akash M
+Reference Number: 212223230024
+```
 ## Scenario Chosen:
 University / Hospital (choose one)
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![University Database](https://github.com/user-attachments/assets/e082608e-920c-427d-837e-cbd7d79ff5ce)
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
-...
-
+1. Student: StudentID,Name,Gender,DOB,Email,Phone,Address
+2. Instructor: InstructorID,Name,Phone,Email
+3. Department: DepartmentID,Department Name,Head of Department
+4. Course: CourseID,Course Name,Credits
+5. Enrollment : EnrollmentID,EnrollmentDate,Grade
+6. Schedule : ScheduleID,Day,Time
+7. Classroom : ClassroomID,Building,Room Number,Capacity ...
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
-...
-
-## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
-
-## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
-
+1. Enrollment (StudentID,CourseID )
+2. Course (DepartmentID, CourseID)
+3. Instructor(InstructorID,CourseID)
+4. Schedule(CourseID,ClassroomID) ...
 ## RESULT
+Thus,we have created an E-R Diagram for the chosen scenario successfully defining necessary entities,attributes,relationships and constraints.
