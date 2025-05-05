@@ -1,5 +1,6 @@
 # Experiment 4: Aggregate Functions, Group By and Having Clause
-
+# Name: Ashwin Akash M
+# Reference Number: 212223230024
 ## AIM
 To study and implement aggregate functions, GROUP BY, and HAVING clause with suitable examples.
 
@@ -38,123 +39,121 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
-
+What is the count of male and female patients?
 ```sql
--- Paste your SQL code below for Question 1
+SELECT GENDER,COUNT(*) AS TotalPatients FROM Patients
+GROUP BY GENDER;
 ```
 
 **Output:**
-
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/068e89c9-a7e8-4205-844c-fa1b4a83a201)
 
 **Question 2**
 ---
--- Paste Question 2 here
+How many patients are covered by each insurance company?
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT InsuranceCompany,COUNT(*) AS TotalPatients FROM Insurance
+GROUP BY InsuranceCompany;
 ```
 
 **Output:**
-
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/372fb8c4-b609-4011-bc9a-7e6ba48d583f)
 
 **Question 3**
 ---
--- Paste Question 3 here
+How many appointments are scheduled for each doctor?
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT DoctorID,COUNT(*) AS TotalAppointments FROM Appointments
+GROUP BY DoctorID;
 ```
 
 **Output:**
-
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/34dc1aa6-4710-43a2-81ce-4eb8a3cc4123)
 
 **Question 4**
 ---
--- Paste Question 4 here
-
+Write a SQL query to find the maximum purchase amount.
 ```sql
--- Paste your SQL code below for Question 4
+SELECT MAX(purch_amt) AS MAXIMUM FROM orders;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/547b9414-e6d9-41a8-8349-7e9ad5b61f9b)
 
-![Output4](output.png)
 
 **Question 5**
 ---
--- Paste Question 5 here
-
+Write a SQL query to count the number of customers. Return number of customers.
 ```sql
--- Paste your SQL code below for Question 5
+SELECT COUNT(customer_id) AS 'COUNT' FROM customer;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/9f2fc8b3-2cc4-405c-9eea-781337dace52)
 
-![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
-
+Write a SQL query to find the number of employees whose age is greater than 32.
 ```sql
--- Paste your SQL code below for Question 6
+SELECT COUNT(id) AS 'COUNT' FROM employee
+WHERE age>32;
 ```
 
 **Output:**
-
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/a6b75732-2c2e-4749-9c18-bf06286c8b74)
 
 **Question 7**
 ---
--- Paste Question 7 here
 
+Write a SQL query to find the Fruit with the lowest available quantity.
 ```sql
--- Paste your SQL code below for Question 7
+SELECT name AS 'fruit_name',MIN(inventory) AS lowest_quantity FROM fruits;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/6aa9b199-1da9-4af4-9c29-b2237e96dad7)
 
 **Question 8**
 ---
--- Paste Question 8 here
-
+Write the SQL query that accomplishes the selection of product which has lowest price in each category from the "products" table and includes only those products where the minimum price is less than 10.
 ```sql
--- Paste your SQL code below for Question 8
+SELECT category_id,MIN(price) AS Price FROM products
+WHERE price<10
+GROUP BY category_id;
 ```
 
 **Output:**
-
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/7ee7fff4-61a4-4844-b879-0e4da88a0038)
 
 **Question 9**
 ---
--- Paste Question 9 here
-
+Write the SQL query to find how many patients have more than 3 medical records?.
 ```sql
--- Paste your SQL code below for Question 9
+SELECT PatientID,COUNT(*) AS TotalRecords FROM MedicalRecords
+GROUP BY PatientID
+HAVING COUNT(*)>3;
 ```
 
 **Output:**
-
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/a56ab19c-f3c1-48c7-82b2-594346ef172a)
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write the SQL query that achieves the grouping of data by age intervals using the expression (age/5)5, calculates the total salary sum for each group, and excludes groups where the total salary sum is not greater than 5000.
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT (age/5)*5 AS age_group,SUM(salary) AS 'SUM(salary)' FROM customer1
+GROUP BY (age/5)*5
+HAVING SUM(salary)>5000;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/a4d1a8e3-90ff-4171-9aad-eb9edd89568b)
 
-![Output10](output.png)
 
 
 ## RESULT
